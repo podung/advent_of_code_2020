@@ -1,13 +1,13 @@
 defmodule Day01 do
   def part1(input) do
-    first = List.first(input)
+    pairs = for i <- input, j <- input, do: {i, j}
 
-    second =
-      input
-      |> Enum.find(fn x ->
-        x + first == 2020
+    {i, j} =
+      pairs
+      |> Enum.find(fn {i, j} ->
+        i + j == 2020
       end)
 
-    first * second
+    i * j
   end
 end

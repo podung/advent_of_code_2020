@@ -15,12 +15,12 @@ defmodule Day02Test do
     assert Day02.part1(passwords) == 2
   end
 
-  # test "calculates day1 part 1 correctly" do
-  # passwords =
-  # "lib/fixtures/day02_fixture.txt"
-  # |> File.read!()
-  # |> split_lines
+  test "calculates day1 part 1 correctly" do
+    passwords =
+      "lib/fixtures/day02_fixture.txt"
+      |> File.read!()
+      |> split_lines
 
-  # assert Day02.part1(passwords) == 633_216
-  # end
+    assert Day02.part1(passwords) == 414
+  end
 end

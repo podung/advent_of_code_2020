@@ -41,34 +41,15 @@ defmodule Day02 do
   end
 
   defp violates_new_constraints({password, letter, index1, index2}) do
-    first = String.at(password, index1 - 1)
-    second = String.at(password, index2 - 1)
+    first_match = position_match(password, index1, letter)
+    second_match = position_match(password, index2, letter)
 
-    first_position_match = first == letter
-    second_position_match = second == letter
-
-    #IO.puts " ********************"
-    #IO.inspect password
-    #IO.inspect letter
-    #IO.inspect "#{first} - #{index1}"
-    #IO.inspect "#{second} - #{index2}"
-
-    #IO.inspect first_position_match
-    #IO.inspect second_position_match
-    #IO.inspect first_position_match != second_position_match
-    #IO.puts " ********************\n\n\n"
-
-
-    !(first_position_match != second_position_match)
+    !(first_match != second_match)
   end
 
-    #[ index1, index2 ]
-    #|> Enum.map fn index ->
-      #password
-      #|> String.at(index1-1)
-      #|> Kernel.==(letter)
-    #end
-  defp position_match(string, position, letter) do
-
+  defp position_match(string, index, letter) do
+    string
+    |> String.at(index - 1)
+    |> Kernel.==(letter)
   end
 end
